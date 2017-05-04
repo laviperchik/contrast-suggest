@@ -2,6 +2,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+	margin: 0;
 }
 
 a {
@@ -10,11 +11,15 @@ a {
 
 .container {
   max-width: 900px;
-  margin: auto;
+  margin: 10px auto 20px;
   padding: 10px;
+ 
+  
+}
+.form {
   background: #fff;
   color: #000;
-  border: 1px solid #777;
+	border: 1px solid #777;
 }
 
 input {
