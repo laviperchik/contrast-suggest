@@ -203,6 +203,7 @@ fieldset div {
   font-size: 1.5em;
   background: none;
   border: 2px solid;
+	cursor: pointer;
   border-radius: 3px;
   font-family: consolas, monaco, monospace;
 }
