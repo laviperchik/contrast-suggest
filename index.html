@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Contrast Suggest</title>
+	<title>Contrast Suggest - Accessibility Contrast Ratio Checker</title>
 	<link rel="stylesheet" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:image" content="thumb.png" />
@@ -22,15 +22,15 @@
 	  <fieldset class="fields">
 
 	    <p><label for="bgcolor">background</label>
-	      <input type="text" name="" id="bgcolor" value="#ffffff" spellcheck="false" /></p>
+	      <input type="text" name="" id="bgcolor" value="#ffffff" spellcheck="false" aria-controls="contrast" /></p>
 	    <p>
 	      <label for="color">text</label>
-	      <input type="text" name="" id="color" value="#08c" spellcheck="false" />
+	      <input type="text" name="" id="color" value="#08c" spellcheck="false" aria-controls="contrast" />
 	    </p>
 	    <div><small>(hex values only)</small></div>
-	     <span id="contrast"></span>
+	     <span id="contrast" role="region" aria-live="polite"><span class="visuallyhidden">Calculated contrast:</span> <span id="grade"></span></span>
 	  <span id="messages"></span>
-	    <div>closest suggestion: <button disabled id="reco">#007dc0</button></div>
+	    <div><label for="reco">Closest text color with enough contrast:</label> <button disabled id="reco">#007dc0</button></div>
 	  </fieldset>
 
  

@@ -147,24 +147,35 @@ var messages = {
 	'aa': 'Passes AA level for any size text and AAA for large text (above 18pt or bold above 14pt)',
 	'aaa': 'Passes AAA level for any size text'
 };
+
 $('input').on('keyup paste focusout', function() {
   var pallette = $('#pallette').html(''),
     contrast = $("#contrast").removeAttr('class'),
     bg = $('#bgcolor').val(),
     color = $('#color').val(),
     prevhex = "",
+    hsl,
+    fullhex,
+    bghsl,
+    bgfullhex,
+    check,
+    levelpassed,
+    prevlevel = "",
+    recommended,
+    levels,
+    re = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
+    
+  if (re.test(color) && re.test(bg)) {
     hsl = hexToHsl(color),
     fullhex = hslToHex(hsl[0], hsl[1], hsl[2]),
     bghsl = hexToHsl(bg),
     bgfullhex = hslToHex(bghsl[0], bghsl[1], bghsl[2]),
     check = contrastCheck(bg, color),
-     levelpassed = colorResult(check),
-    prevlevel = "",
-    recommended,
-    levels = $('#levels tbody').html(''),
-    re = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
-  $('.first,.last').html('').css('border-color', '#777');
-  if (re.test(color) && re.test(bg)) {
+    levelpassed = colorResult(check),
+    levels = $('#levels tbody').html('');
+      
+    $('.first,.last').html('').css('border-color', '#777');
+  
     $('body').css({
       'background': bg,
       'color': color
@@ -177,7 +188,7 @@ $('input').on('keyup paste focusout', function() {
       'background': bg,
       'color': color
     });
-    contrast.html(check).addClass(levelpassed);
+    contrast.addClass(levelpassed).find('#grade').html(check);
     $('#messages').html(messages[levelpassed]);
     for (i = 0; i <= 10000; i++) {
 
@@ -219,9 +230,9 @@ $('input').on('keyup paste focusout', function() {
       $('#reco').html(recommended).removeAttr('disabled').css({
         'color': recommended,
         'background': bg
-      });
+      }).parent().slideDown();
     } else {
-      $('#reco').attr('disabled', 'disabled');
+      $('#reco').attr('disabled', 'disabled').parent().slideUp();
     }
   }
 });
