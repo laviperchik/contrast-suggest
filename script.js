@@ -147,7 +147,9 @@ var messages = {
 	'aa': 'Passes AA level for any size text and AAA for large text (above 18pt or bold above 14pt)',
 	'aaa': 'Passes AAA level for any size text'
 };
-
+$('form').on('submit', function(e){
+  e.preventDefault();
+})
 $('input').on('keyup paste focusout', function() {
   var pallette = $('#pallette').html(''),
     contrast = $("#contrast").removeAttr('class'),

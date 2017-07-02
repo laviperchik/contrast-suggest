@@ -11,28 +11,28 @@
 	<header>
 	<div class="container">
 	<h1>Contrast Suggest</h1>
-	<p>Accessibility contrast ratio checker: insert background and text color to the fields. The calculated contrast ratio will appear. If the contrast ratio is bellow 4.5, a suggested darker/lighter text color will appear.</p>
-	<p>The idea and the design are based on Lea Verou's excellent <a href="http://leaverou.github.io/contrast-ratio/">contrast ratio checker</a></p>
+	<h2>Accessibility Contrast Ratio Checker</h2>
 </div>
 </header>
 <main>
 	<!--
 	<p class="attention">Attention! the "app" is still a little buggy</p>-->
 	<div class="container form">
+		<form action="#">
 	  <fieldset class="fields">
 
-	    <p><label for="bgcolor">background</label>
-	      <input type="text" name="" id="bgcolor" value="#ffffff" spellcheck="false" aria-controls="contrast" /></p>
+	    <p><label for="bgcolor">background color</label>
+	      <input type="color" name="" id="bgcolor" value="#ffffff" spellcheck="false" aria-controls="contrast" autocomplete="off" /></p>
 	    <p>
-	      <label for="color">text</label>
-	      <input type="text" name="" id="color" value="#08c" spellcheck="false" aria-controls="contrast" />
+	      <label for="color">text color</label>
+	      <input type="color" name="" id="color" value="#08c" spellcheck="false" aria-controls="contrast" autocomplete="off" />
 	    </p>
 	    <div><small>(hex values only)</small></div>
 	     <span id="contrast" role="region" aria-live="polite"><span class="visuallyhidden">Calculated contrast:</span> <span id="grade"></span></span>
 	  <span id="messages"></span>
 	    <div><label for="reco">Closest text color with enough contrast:</label> <button disabled id="reco">#007dc0</button></div>
 	  </fieldset>
-
+    </form>
  
 
 	  <table id="levels">
@@ -57,8 +57,12 @@
 </main>
 	<footer>
 		<div class="container">
+
+				<p>Accessibility contrast ratio checker: insert background and text color to the fields. The calculated contrast ratio will appear. If the contrast ratio is bellow 4.5, a suggested darker/lighter text color will appear.</p>
+				<p>The idea and the design are based on Lea Verou's excellent <a href="http://leaverou.github.io/contrast-ratio/">contrast ratio checker</a></p>
+			</div>
 			<p>&copy; 2017 <a href="https://il.linkedin.com/in/laviperchik" target="_blank">Lavi Perchik</a></p>
-		</div>
+	
 	</footer>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="script.js"></script>
