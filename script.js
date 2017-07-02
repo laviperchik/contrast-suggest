@@ -150,7 +150,7 @@ var messages = {
 $('form').on('submit', function(e){
   e.preventDefault();
 })
-$('input').on('keyup paste focusout', function() {
+$('input').on('keyup paste', function() {
   var pallette = $('#pallette').html(''),
     contrast = $("#contrast").removeAttr('class'),
     bg = $('#bgcolor').val(),
@@ -167,6 +167,20 @@ $('input').on('keyup paste focusout', function() {
     levels,
     re = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
     
+    
+    /*if(bg.startsWith("#")!=true) {
+      $('#bgcolor').val('#'+bg);
+    } else 
+    $('#bgcolor').val(bg.replace('##','#'));
+    bg = $('#bgcolor').val();
+    */
+   
+   /* if(color.startsWith("#")!=true) {
+      $('#color').val('#'+bg);
+    } else 
+    $('#color').val(color.replace('##','#'));
+    color = $('#color').val();
+    */
   if (re.test(color) && re.test(bg)) {
     hsl = hexToHsl(color),
     fullhex = hslToHex(hsl[0], hsl[1], hsl[2]),
@@ -243,4 +257,4 @@ $('#reco').on('click', function(e) {
   var rcolor = $(this).text();
   $('#color').val(rcolor).trigger('paste');
 });
-$('input').trigger('focusout');
+$('input').trigger('paste');

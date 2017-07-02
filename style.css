@@ -28,6 +28,7 @@ h2 {
   background: #fff;
   color: #000;
 	border: 1px solid #777;
+  border-radius: 3px;
 }
 
 input {
@@ -39,10 +40,12 @@ input {
   background: #fff;
   text-align: center;
   margin: 0;
+  border-left: 0;
+  border-radius:  0 3px 3px 0;
 }
 .input {
   position: relative;
-  padding-left: 60px;
+  padding-left: 68px;
   display: inline-block;
 }
 input+span {
@@ -50,19 +53,20 @@ input+span {
   top: 0;
   bottom: 0;
   left: 12px;
-  width: 48px;
+  width: 56px;
   border: 3px solid #000;
   box-sizing: border-box;
-  border-right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-#color {
+#color+span {
   border-style: dotted;
 }
-
-#bgcolor {
-  border-style: solid;
+#bgcolor+span {
+  border-style: dashed;
 }
+
+
 
 fieldset {
   border: none;
