@@ -38,6 +38,22 @@ input {
   width: 5em;
   background: #fff;
   text-align: center;
+  margin: 0;
+}
+.input {
+  position: relative;
+  padding-left: 60px;
+  display: inline-block;
+}
+input+span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  width: 48px;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  border-right: 0;
 }
 
 #color {
@@ -45,7 +61,7 @@ input {
 }
 
 #bgcolor {
-  border-style: dashed;
+  border-style: solid;
 }
 
 fieldset {

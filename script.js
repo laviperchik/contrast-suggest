@@ -182,12 +182,12 @@ $('input').on('keyup paste focusout', function() {
       'background': bg,
       'color': color
     });
-    $('#bgcolor').css({
-      'background': color,
+    $('#bgcolor+span').css({
+      'background': bg,
       'color': bg
     });
-    $('#color').css({
-      'background': bg,
+    $('#color+span').css({
+      'background': color,
       'color': color
     });
     contrast.addClass(levelpassed).find('#grade').html(check);
@@ -234,12 +234,13 @@ $('input').on('keyup paste focusout', function() {
         'background': bg
       }).parent().slideDown();
     } else {
-      $('#reco').attr('disabled', 'disabled').parent().slideUp();
+      $('#reco').parent().slideUp();
     }
   }
 });
-$('#reco').on('click', function() {
+$('#reco').on('click', function(e) {
+  e.preventDefault();
   var rcolor = $(this).text();
-  $('#color').val(rcolor).trigger('focusout');
+  $('#color').val(rcolor).trigger('paste');
 });
 $('input').trigger('focusout');
