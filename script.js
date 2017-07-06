@@ -258,3 +258,10 @@ $('#reco').on('click', function(e) {
   $('#color').val(rcolor).trigger('keyup');
 });
 $('input').trigger('keyup');
+$('#switch').on('click', function(e){
+   e.preventDefault();
+   var bg = $('#bgcolor').val(),
+   color = $('#color').val();
+   $('#bgcolor').val(color);
+   $('#color').val(bg).trigger('keyup');
+})
